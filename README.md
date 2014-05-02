@@ -69,3 +69,7 @@ sudo fusermount -u /mnt/osx
 # Play video!
 
 omxplayer -o hdmi /mnt/osx/Downloads/complete/filename.avi
+
+# Install nodejs
+
+sudo pacman install nodejs

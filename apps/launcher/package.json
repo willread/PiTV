@@ -1,0 +1,51 @@
+{
+  "name": "pitv-launcher",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "https://github.com/collectivecognition/PiTv/apps/launcher",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/collectivecognition/PiTv/apps/launcher"
+  },
+  "bugs": {
+    "url": "https://github.com/collectivecognition/PiTv/issues"
+  },
+  "author": {
+    "name": "Will Blanchette",
+    "email": "wb@wblanchette.com",
+    "url": "http://collectivecognition.com/"
+  },
+  "contributors": [
+    {
+      "name": "Will Blanchette",
+      "email": "wb@wblanchette.com",
+      "url": "http://collectivecognition.com/"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/collectivecognition/PiTV/blob/master/LICENSE.txt"
+    }
+  ],
+  "main": "launcher.js",
+  "engines": {
+    "node": ">= 0.6.x"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "walk": "~2.3.1",
+    "express": "~4.1.1",
+    "glob": "~3.2.9",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.2"
+  },
+  "private": false,
+  "scripts": {},
+  "readme": "",
+  "readmeFilename": "README.md",
+  "dist": {
+    "shasum": ""
+  }
+}
