@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica, sans-serif;
+	background: #333;
+}
+
+ul.files {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.files li {
+	padding: 10px;
+	font-size: 17px;
+	font-weight: 100;
+	background: #777;
+	color: #fff;
+	border-bottom: 1px solid #999;
+	border-top: 1px solid #444;
+	cursor: hand;
+}
+
+ul.files li:hover {
+	background: #888;
+}
+
+input.search {
+	width: 100%;
+	box-sizing: border-box;
+	border: none;
+	padding: 10px;
+	margin: 0;
+	font-size: 20px;
+	font-weight: 200;
+	box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.4) inset;
+}
