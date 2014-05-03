@@ -1,6 +1,6 @@
 function LauncherCtrl($scope, $http){
 	top.launcherCtrlScope = $scope; // Debug
-
+	$scope.files = [];
 	$http.get("/files").
 		success(function(files){
 			angular.forEach(files, function(file, i){
