@@ -55,7 +55,7 @@ app.put("/play", function(req, res){
 	if(videoChild){ videoChild.kill(); }
 	videoChild = spawn("omxplayer", ["-o",  "hdmi", filename]);
 	videoChild.stdout.on('data', function(data){
-		console.log("stdout", data)
+		console.log("stdout", (new StringDecoder('utf8')).write(data))
 	})
 	// videoChild = exec("omxplayer -o hdmi \"" + filename + "\"");
 });
