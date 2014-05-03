@@ -49,7 +49,7 @@ var videoChild;
 
 app.put("/play", function(req, res){
 	console.log("playing " + req.body.id, files[req.body.id]);
-	videoChild.kill();
+	if(videoChild){ videoChild.kill(); }
 	videoChild = spawn("omxplayer" ["-o hdmi \"" + files[req.body.id] + "\""]);
 });
 
