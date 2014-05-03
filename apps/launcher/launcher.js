@@ -52,10 +52,10 @@ var videoChild;
 app.put("/play", function(req, res){
 	var filename = files[req.body.id].replace(/(["\s'$`\\])/g,'\\$1');
 	console.log("playing " + req.body.id, filename);
-	if(videoChild){ videoChild.kill(); }
-	// videoChild = exec("omxplayer -o hdmi " + filename)
+	if(videoChild){ process.kill(videoChild.pid); }
+	videoChild = exec("omxplayer -o hdmi " + filename)
 	// videoChild = spawn("omxplayer", ["-o",  "hdmi", filename]);
-	videoChild = spawn("omxplayer", [filename]);
+	// videoChild = spawn("omxplayer", [filename]);
 	// videoChild.stdout.on('data', function(data){
 	// 	console.log("stdout", data.toString("utf-8"))
 	// })
