@@ -54,7 +54,7 @@ app.put("/play", function(req, res){
 	console.log("playing " + req.body.id, filename);
 	if(videoChild){ videoChild.kill(); }
 	// videoChild = spawn("omxplayer", ["-o",  "hdmi", "\"" + filename + "\""]);
-	videoChild = fork("omxplayer -o hdmi \"" + filename + "\"");
+	videoChild = exec("omxplayer -o hdmi \"" + filename + "\"");
 });
 
 // Start server
