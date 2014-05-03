@@ -21,7 +21,7 @@ app.use(bodyParser());
 var files = [];
 
 var refreshFiles = function(dir){
-	glob(path.join(dir, "*.{avi,mpg,mpeg}"), {}, function(err, f){
+	glob(path.join(dir, "*.{avi,mpg,mpeg,dmg}"), {}, function(err, f){
 		files = f;
 	});
 };
