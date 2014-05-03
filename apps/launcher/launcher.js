@@ -1,6 +1,7 @@
 var path = require("path");
 var fs = require("fs");
 var exec = require("child_process").exec;
+var spawn = require("child_process")
 
 // var walk = require("walk");
 var glob = require("glob");
