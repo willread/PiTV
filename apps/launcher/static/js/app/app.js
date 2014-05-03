@@ -12,6 +12,6 @@ function LauncherCtrl($scope, $http){
 
 	$scope.play = function(id){
 		// $http.put("/play", {id: id});
-		$http.put("/omx/start/" + $scope.files[id].path);
+		$http.put("/omx/start/" + $scope.files[id].path.replace(/(["\s'$`\\])/g,'\\$1'));
 	};
 }
