@@ -4,6 +4,7 @@ var exec = require("child_process").exec;
 var spawn = require("child_process").spawn;
 var fork = require("child_process").fork;
 var execFile = require("child_process").execFile;
+var omx = require("omxcontrol");
 
 // var walk = require("walk");
 var glob = require("glob");
@@ -18,6 +19,7 @@ var app = express();
 app.use(express.static(path.join(__dirname, "static")));
 app.use(cookieParser());
 app.use(bodyParser());
+app.use(omx());
 
 // Maintain a list of video files
 
