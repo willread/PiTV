@@ -59,7 +59,7 @@ app.put("/play", function(req, res){
 	// videoChild = execFile("omxplayer", ["-o",  "hdmi", filename]);
 	// if(videoChild){ process.kill(videoChild.pid, "SIGTERM"); console.log("killing pid " + videoChild.pid);}
 	exec("killall -HUP omxplayer omxplayer.bin", function(){
-		videoChild = exec("omxplayer -o hdmi" + filename)
+		videoChild = exec("omxplayer -o hdmi " + filename)
 	});
 	// videoChild = spawn("omxplayer", ["-o",  "hdmi", filename]);
 	// videoChild = spawn("omxplayer", [filename]);
