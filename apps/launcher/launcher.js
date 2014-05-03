@@ -53,7 +53,7 @@ app.put("/play", function(req, res){
 	var filename = files[req.body.id].replace(/(["\s'$`\\])/g,'\\$1');
 	console.log("playing " + req.body.id, filename);
 	// if(videoChild){ process.kill(videoChild.pid, "SIGTERM"); console.log("killing pid " + videoChild.pid);}
-	exec("killall -HUP omxplayer");
+	exec("killall -HUP omxplayer omxplayer.bin");
 	videoChild = exec("omxplayer -o hdmi " + filename)
 	// videoChild = spawn("omxplayer", ["-o",  "hdmi", filename]);
 	// videoChild = spawn("omxplayer", [filename]);
