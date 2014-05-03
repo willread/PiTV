@@ -49,9 +49,10 @@ app.get("/files", function(req, res){
 var videoChild;
 
 app.put("/play", function(req, res){
-	console.log("playing " + req.body.id, files[req.body.id]);
+	var filename = files[req.body.id].replace(" ", "\\ ");
+	console.log("playing " + req.body.id, filename);
 	if(videoChild){ videoChild.kill(); }
-	videoChild = spawn("omxplayer", ["-o",  "hdmi", "\"" + files[req.body.id] + "\""]);
+	videoChild = spawn("omxplayer", ["-o",  "hdmi", "\"" + filename + "\""]);
 });
 
 // Start server
