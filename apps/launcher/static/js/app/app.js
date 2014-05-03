@@ -4,6 +4,8 @@ function LauncherCtrl($scope, $http){
 	$http.get("/files").
 		success(function(files){
 			angular.foreach(files, function(file, i){
+				file = file.split("/");
+				file = file[file.length - 1];
 				$scope.files.push({path: file, index: i});
 			});
 		});
