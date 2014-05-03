@@ -7,6 +7,6 @@ function LauncherCtrl($scope, $http){
 		});
 
 	$scope.play = function(id){
-		$http.put("/play/" + id);
+		$http.put("/play", {id: id});
 	};
 }

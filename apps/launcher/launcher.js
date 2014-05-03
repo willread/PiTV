@@ -23,16 +23,19 @@ var files = [];
 var refreshFiles = function(dir){
 	glob(path.join(dir, "*.{avi,mpg,mpeg,dmg}"), {}, function(err, f){
 		files = f;
+		console.log("got files", f.length);
 	});
 };
 
 // Refresh files every so often
 
-setInterval(function(){
-	refreshFiles("/Users/wb/Downloads");	
-}, 10000);
+/*setInterval(function(){
+	refreshFiles(p);	
+}, 100000000);*/
 
-refreshFiles("/Users/wb/Downloads");
+var p = "/mnt/osx/Downloads/complete/TV/";
+
+refreshFiles(p);
 
 // File API endpoint
 
@@ -42,8 +45,9 @@ app.get("/files", function(req, res){
 
 // Playback API endpoing
 
-app.put("/play/:id", function(req, res){
-	exec("omxplayer -o hdmi " + files[req.params.id]);
+app.put("/play", function(req, res){
+	console.log("playing " + id);
+	exec("omxplayer -o hdmi " + files[req.body.id]);
 });
 
 // Start server
