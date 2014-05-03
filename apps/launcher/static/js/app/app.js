@@ -3,7 +3,9 @@ function LauncherCtrl($scope, $http){
 
 	$http.get("/files").
 		success(function(files){
-		$scope.files = files;
+			angular.foreach(files, function(file, i){
+				$scope.files.push({path: file, index: i});
+			});
 		});
 
 	$scope.play = function(id){

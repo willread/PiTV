@@ -6,7 +6,7 @@
 	<body ng-controller="LauncherCtrl">
 		<input type="text" class="search" ng-model="fileSearch" placeholder="Search...">
 		<ul class="files" ng-cloak>
-			<li ng-repeat="file in files | filter:fileSearch" ng-click="play($index)">{{file}}</li>
+			<li ng-repeat="file in files | filter:fileSearch" ng-click="play(file.index)">{{file.path}}</li>
 		</ul>
 
 		<script src="js/lib/angular.js"></script>
