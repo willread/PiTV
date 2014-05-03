@@ -3,6 +3,7 @@ var fs = require("fs");
 var exec = require("child_process").exec;
 var spawn = require("child_process").spawn;
 var fork = require("child_process").fork;
+var execFile = require("child_process").execFile;
 
 // var walk = require("walk");
 var glob = require("glob");
@@ -52,9 +53,13 @@ var videoChild;
 app.put("/play", function(req, res){
 	var filename = files[req.body.id].replace(/(["\s'$`\\])/g,'\\$1');
 	console.log("playing " + req.body.id, filename);
+	if(videoChild){
+		videoChild.stdin.write("q", "utf-8");
+	}
+	videoChild = execFile("omxplayer", ["-o",  "hdmi", filename]);
 	// if(videoChild){ process.kill(videoChild.pid, "SIGTERM"); console.log("killing pid " + videoChild.pid);}
-	exec("killall -HUP omxplayer omxplayer.bin");
-	videoChild = exec("omxplayer -o hdmi " + filename)
+	// exec("killall -HUP omxplayer omxplayer.bin");
+	// videoChild = exec("omxplayer -o hdmi " + filename)
 	// videoChild = spawn("omxplayer", ["-o",  "hdmi", filename]);
 	// videoChild = spawn("omxplayer", [filename]);
 	// videoChild.stdout.on('data', function(data){
