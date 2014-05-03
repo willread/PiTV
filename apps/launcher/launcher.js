@@ -46,7 +46,7 @@ app.get("/files", function(req, res){
 // Playback API endpoing
 
 app.put("/play", function(req, res){
-	console.log("playing " + req.body.id, files[reg.body.id]);
+	console.log("playing " + req.body.id, files[req.body.id]);
 	exec("omxplayer -o hdmi " + files[req.body.id]);
 });
 
