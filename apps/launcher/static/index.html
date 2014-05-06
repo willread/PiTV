@@ -10,6 +10,8 @@
 			<li ng-repeat="file in files | filter:fileSearch" ng-click="play(file.index)">{{file.name}}</li>
 		</ul>
 
+		<button ng-click="game()">Game!</button>
+
 		<script src="js/lib/angular.js"></script>
 		<script src="js/app/app.js"></script>
 	</body>

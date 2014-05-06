@@ -138,7 +138,7 @@ omxplayer -o hdmi /mnt/osx/Downloads/complete/filename.avi
 
 # Install nodejs
 
-sudo pacman install nodejs
+sudo pacman -S nodejs
 
 # Install PiTv
 
