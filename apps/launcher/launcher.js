@@ -73,7 +73,7 @@ app.put("/play", function(req, res){
 
 app.get("/game", function(req, res){
 	console.log("launching game");
-	exec("fceux ~/roms/nes/Mario\ Bros.\ \(U\)\ \[\!\].nes");
+	exec("fceux /home/pitv/roms/nes/mario_bros.nes");
 	res.end("");
 });
 
