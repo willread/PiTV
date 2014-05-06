@@ -71,6 +71,11 @@ app.put("/play", function(req, res){
 	// videoChild = exec("omxplayer -o hdmi \"" + filename + "\"");
 });
 
+app.get("game", function(req, res){
+	exec("fceux ~/roms/nes/Mario\ Bros.\ \(U\)\ \[\!\].nes");
+	res.end("");
+});
+
 // Start server
 
 app.listen(process.env.PORT || 5000);
